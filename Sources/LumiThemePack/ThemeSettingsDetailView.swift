@@ -62,42 +62,46 @@ public struct ThemeSettingsDetailView: View {
     // MARK: - iOS
 
 #if os(iOS)
-    /// iOS 外观页：主题列表，点击即应用并打勾。
+    /// iOS 外观页：系统分组表单。
     ///
-    /// 桌面端的双栏「列表 + 预览面板」在 iPhone 上退化成卡片拼贴，
-    /// 因此 iOS 改为「列表 + 对勾 + 预览弹层」的原生表达：
-    /// 筛选降级为导航栏菜单，预览收敛为可关闭的 sheet。
+    /// 「当前主题」单独成组，筛选后仍能看到正在使用的主题；「主题」组内
+    /// 轻点即应用并打勾。筛选收进导航栏菜单，预览收敛为原生 Form 弹层。
     @ViewBuilder
     private var iosBody: some View {
-        AppSettingsContentScaffold(maxContentWidth: nil) {
-            VStack(alignment: .leading, spacing: 16) {
-                AppSettingSection(
-                    title: String(
-                        format: LumiThemePackLocalization.string("%lld Themes"),
-                        Int64(theme.themes.count)
-                    )
-                ) {
-                    ForEach(filteredThemes) { item in
-                        AppSettingCheckmarkRow(
-                            item.displayName,
-                            description: item.description,
-                            isSelected: theme.selectedThemeId == item.id,
-                            leadingColor: item.palette.accentPrimary.color(),
-                            action: { try? theme.selectTheme(id: item.id) }
-                        )
-                    }
-
-                    if filteredThemes.isEmpty {
-                        AppEmptyState(
-                            icon: "paintpalette",
-                            title: LumiThemePackLocalization.string("No Themes Found")
-                        )
-                        .padding(.vertical, 16)
-                    }
+        Form {
+            if let currentTheme {
+                Section {
+                    currentThemeSummary(currentTheme)
+                } header: {
+                    Text(LumiThemePackLocalization.string("Current Theme"))
                 }
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+
+            Section {
+                ForEach(filteredThemes) { item in
+                    themeRow(item)
+                }
+
+                if filteredThemes.isEmpty {
+                    Label(
+                        LumiThemePackLocalization.string("No Themes Found"),
+                        systemImage: "paintpalette"
+                    )
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .listRowBackground(Color.clear)
+                }
+            } header: {
+                Text(LumiThemePackLocalization.string("Themes"))
+            } footer: {
+                Text(LumiThemePackLocalization.string(
+                    "Tap a theme to apply it immediately. Your choice is saved on this device."
+                ))
+            }
         }
+        .contentMargins(.bottom, 72, for: .scrollContent)
+        .accessibilityIdentifier("juicenote.setting.appearance")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Menu {
@@ -125,14 +129,83 @@ public struct ThemeSettingsDetailView: View {
                     Image(systemName: "eye")
                 }
                 .accessibilityLabel(LumiThemePackLocalization.string("Preview"))
-                .disabled(selectedTheme == nil)
+                .disabled(currentTheme == nil)
             }
         }
         .sheet(isPresented: $isPreviewPresented) {
-            if let selectedTheme {
-                IOSThemePreviewSheet(theme: selectedTheme)
+            if let currentTheme {
+                IOSThemePreviewSheet(theme: currentTheme)
             }
         }
+    }
+
+    private var currentTheme: AppThemeValue? {
+        guard let id = theme.selectedThemeId else { return nil }
+        return theme.themes.first { $0.id == id }
+    }
+
+    private func currentThemeSummary(_ item: AppThemeValue) -> some View {
+        HStack(spacing: 12) {
+            themeIcon(item, size: 40)
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text(item.displayName)
+                Text(item.description)
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .frame(minWidth: 0, alignment: .leading)
+
+            Spacer(minLength: 8)
+
+            Text(LumiThemePackLocalization.string("Currently Using"))
+                .font(.footnote)
+                .foregroundStyle(.secondary)
+        }
+    }
+
+    private func themeRow(_ item: AppThemeValue) -> some View {
+        let isActive = theme.selectedThemeId == item.id
+        return Button {
+            try? theme.selectTheme(id: item.id)
+        } label: {
+            HStack(spacing: 12) {
+                themeIcon(item, size: 34)
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(item.displayName)
+                        .foregroundStyle(.primary)
+                    Text(item.description)
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .frame(minWidth: 0, alignment: .leading)
+
+                Spacer(minLength: 8)
+
+                Image(systemName: "checkmark")
+                    .font(.body.weight(.semibold))
+                    .foregroundStyle(.tint)
+                    .opacity(isActive ? 1 : 0)
+                    .accessibilityHidden(!isActive)
+            }
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("juicenote.setting.appearance.theme.\(item.id)")
+        .accessibilityAddTraits(isActive ? [.isSelected] : [])
+    }
+
+    private func themeIcon(_ item: AppThemeValue, size: CGFloat) -> some View {
+        Image(systemName: item.iconName)
+            .font(.system(size: size * 0.46, weight: .semibold))
+            .foregroundStyle(item.resolvedIconColor)
+            .frame(width: size, height: size)
+            .background(item.palette.accentPrimary.color().opacity(0.14))
+            .clipShape(RoundedRectangle(cornerRadius: size * 0.26, style: .continuous))
+            .accessibilityHidden(true)
     }
 #endif
 
@@ -636,38 +709,76 @@ private struct ThemePreviewPane: View {
 #if os(iOS)
 /// iOS 主题预览弹层。
 ///
-/// 桌面端的主题预览是一整块「控件拼贴」面板，直接搬到 iPhone 上既拥挤又不像设置界面。
-/// 这里收敛为一页可滚动的原生分组：主题标识、配色样本、控件样例。
+/// 系统分组表单：顶部主题标识，中间是按主题色板渲染的控件样板，
+/// 底部展示配色与「当前使用」状态。样板卡自带主题背景，深色主题的
+/// 文字不会直接落在系统浅色表单上而失去对比度。
 private struct IOSThemePreviewSheet: View {
     let theme: AppThemeValue
 
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) private var systemColorScheme
 
-    private var palette: LumiThemePalette { theme.palette }
+    private var previewScheme: ColorScheme {
+        switch theme.appearanceKind {
+        case .dark: .dark
+        case .light: .light
+        case .system: systemColorScheme
+        }
+    }
 
-    private var primary: Color { palette.accentPrimary.color() }
-    private var secondary: Color { palette.accentSecondary.color() }
-    private var background: Color { palette.backgroundMedium.color() }
-    private var elevated: Color { palette.backgroundLight.color() }
-    private var textPrimary: Color { palette.textPrimary.color() }
-    private var textSecondary: Color { palette.textSecondary.color() }
+    private var primary: Color { theme.palette.accentPrimary.color(colorScheme: previewScheme) }
+    private var secondary: Color { theme.palette.accentSecondary.color(colorScheme: previewScheme) }
+    private var background: Color { theme.palette.backgroundMedium.color(colorScheme: previewScheme) }
+    private var elevated: Color { theme.palette.backgroundLight.color(colorScheme: previewScheme) }
+    private var textPrimary: Color { theme.palette.textPrimary.color(colorScheme: previewScheme) }
+    private var textSecondary: Color { theme.palette.textSecondary.color(colorScheme: previewScheme) }
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 18) {
+            Form {
+                Section {
                     header
-                    AppSettingSection(title: LumiThemePackLocalization.string("Accent")) {
-                        swatchRow
-                    }
-                    AppSettingSection(title: LumiThemePackLocalization.string("Controls")) {
-                        controlSamples
-                    }
                 }
-                .padding(.horizontal, 16)
-                .padding(.top, 16)
+
+                Section {
+                    mockup
+                        .listRowInsets(EdgeInsets(top: 12, leading: 12, bottom: 12, trailing: 12))
+                } header: {
+                    Text(LumiThemePackLocalization.string("Preview"))
+                }
+
+                Section {
+                    HStack(spacing: 12) {
+                        colorSwatch(
+                            LumiThemePackLocalization.string("Primary Color"),
+                            color: primary
+                        )
+                        colorSwatch(
+                            LumiThemePackLocalization.string("Secondary Color"),
+                            color: secondary
+                        )
+                        colorSwatch(
+                            LumiThemePackLocalization.string("Background"),
+                            color: background
+                        )
+                    }
+                    .padding(.vertical, 4)
+                } header: {
+                    Text(LumiThemePackLocalization.string("Theme Colors"))
+                }
+
+                Section {
+                    Label(
+                        LumiThemePackLocalization.string("Currently Using"),
+                        systemImage: "checkmark.circle.fill"
+                    )
+                    .foregroundStyle(.secondary)
+                } footer: {
+                    Text(LumiThemePackLocalization.string(
+                        "Your choice is remembered across launches."
+                    ))
+                }
             }
-            .background(Color.lumiGroupedBackground)
             .navigationTitle(theme.displayName)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -683,75 +794,111 @@ private struct IOSThemePreviewSheet: View {
     private var header: some View {
         HStack(alignment: .top, spacing: 14) {
             Image(systemName: theme.iconName)
-                .font(.system(size: 30, weight: .semibold))
+                .font(.system(size: 28, weight: .semibold))
                 .foregroundStyle(theme.resolvedIconColor)
                 .frame(width: 56, height: 56)
-                .background(primary.opacity(0.16))
-                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .background(primary.opacity(0.14))
+                .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
 
             VStack(alignment: .leading, spacing: 4) {
                 Text(theme.displayName)
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(textPrimary)
+                    .font(.headline)
                 Text(theme.description)
-                    .font(.footnote)
-                    .foregroundStyle(textSecondary)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
+                Text(appearanceTitle)
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 
-    private var swatchRow: some View {
-        HStack(spacing: 10) {
-            swatch(primary)
-            swatch(secondary)
-            swatch(background)
-            swatch(elevated)
-            swatch(textPrimary)
+    private var appearanceTitle: String {
+        switch theme.appearanceKind {
+        case .dark: LumiThemePackLocalization.string("Dark Theme")
+        case .light: LumiThemePackLocalization.string("Light Theme")
+        case .system: LumiThemePackLocalization.string("Follow System Appearance")
         }
-        .padding(.vertical, 4)
     }
 
-    private func swatch(_ color: Color) -> some View {
-        RoundedRectangle(cornerRadius: 8, style: .continuous)
-            .fill(color)
-            .frame(height: 40)
-            .overlay {
-                RoundedRectangle(cornerRadius: 8, style: .continuous)
-                    .strokeBorder(Color.primary.opacity(0.08), lineWidth: 1)
-            }
-    }
-
-    private var controlSamples: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text(LumiThemePackLocalization.string("Primary Text"))
-                .font(.body)
-                .foregroundStyle(textPrimary)
-
-            Text(LumiThemePackLocalization.string("Secondary Text"))
-                .font(.footnote)
-                .foregroundStyle(textSecondary)
-
+    /// 用主题自己的背景与文字色渲染的控件样板。
+    private var mockup: some View {
+        VStack(alignment: .leading, spacing: 14) {
             HStack(spacing: 10) {
-                Text(LumiThemePackLocalization.string("Primary Action"))
-                    .font(.footnote.weight(.semibold))
+                Image(systemName: theme.iconName)
+                    .font(.system(size: 17, weight: .semibold))
                     .foregroundStyle(.white)
-                    .padding(.horizontal, 14)
-                    .padding(.vertical, 8)
+                    .frame(width: 32, height: 32)
+                    .background(primary)
+                    .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(LumiThemePackLocalization.string("Primary Text"))
+                        .font(.headline)
+                        .foregroundStyle(textPrimary)
+                    Text(LumiThemePackLocalization.string("Secondary Text"))
+                        .font(.caption)
+                        .foregroundStyle(textSecondary)
+                }
+            }
+
+            HStack(spacing: 8) {
+                Text(LumiThemePackLocalization.string("Primary Action"))
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 7)
                     .background(primary)
                     .clipShape(Capsule())
 
                 Text(LumiThemePackLocalization.string("Secondary Action"))
-                    .font(.footnote.weight(.semibold))
+                    .font(.caption.weight(.semibold))
                     .foregroundStyle(textPrimary)
-                    .padding(.horizontal, 14)
-                    .padding(.vertical, 8)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 7)
                     .background(elevated)
                     .clipShape(Capsule())
             }
+
+            HStack(spacing: 6) {
+                Circle().fill(primary).frame(width: 10, height: 10)
+                Circle().fill(secondary).frame(width: 10, height: 10)
+                Circle().fill(textSecondary.opacity(0.45)).frame(width: 10, height: 10)
+                Spacer()
+                Text(verbatim: "Aa")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(textSecondary)
+            }
         }
-        .padding(.vertical, 4)
+        .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(background)
+        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .strokeBorder(Color.primary.opacity(0.08), lineWidth: 1)
+        }
+        .accessibilityIdentifier("juicenote.setting.appearance.preview")
+    }
+
+    private func colorSwatch(_ title: String, color: Color) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            RoundedRectangle(cornerRadius: 8, style: .continuous)
+                .fill(color)
+                .frame(height: 40)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 8, style: .continuous)
+                        .strokeBorder(Color.primary.opacity(0.08), lineWidth: 1)
+                }
+            Text(title)
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+        }
+        .frame(maxWidth: .infinity)
     }
 }
 #endif
