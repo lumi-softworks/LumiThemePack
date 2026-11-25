@@ -39,7 +39,7 @@ public struct ThemeSettingsDetailView: View {
 
     public var body: some View {
         Group {
-            #if os(iOS)
+            #if os(iOS) || os(visionOS)
             iosBody
             #else
             if horizontalSizeClass == .compact {
@@ -61,7 +61,7 @@ public struct ThemeSettingsDetailView: View {
 
     // MARK: - iOS
 
-#if os(iOS)
+#if os(iOS) || os(visionOS)
     /// iOS 外观页：系统分组表单。
     ///
     /// 「当前主题」单独成组，筛选后仍能看到正在使用的主题；「主题」组内
@@ -228,7 +228,7 @@ public struct ThemeSettingsDetailView: View {
                                 onApply: { try? theme.selectTheme(id: item.id) }
                             )
                             .navigationTitle(item.displayName)
-#if os(iOS)
+#if os(iOS) || os(visionOS)
                             .navigationBarTitleDisplayMode(.inline)
 #endif
                         } label: {
@@ -706,7 +706,7 @@ private struct ThemePreviewPane: View {
     }
 }
 
-#if os(iOS)
+#if os(iOS) || os(visionOS)
 /// iOS 主题预览弹层。
 ///
 /// 系统分组表单：顶部主题标识，中间是按主题色板渲染的控件样板，
