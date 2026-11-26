@@ -10,7 +10,7 @@ public enum LumiThemeContract {
         "lumi-light",
     ]
 
-    public static let catalogThemeCount = 19
+    public static let catalogThemeCount = 31
     public static let selectableThemeCount = catalogThemeCount + additionalBuiltinThemeIDs.count
 
     /// The complete selectable ID set after the catalog is registered over

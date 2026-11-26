@@ -9,10 +9,10 @@ struct LumiThemeCatalogTests {
 
     // MARK: - 目录规模与 id
 
-    @Test("目录包含 19 个主题")
+    @Test("目录包含 31 个主题")
     func catalogHasExpectedCount() {
         #expect(LumiThemeCatalog.all.count == LumiThemeContract.catalogThemeCount)
-        #expect(LumiThemeContract.catalogThemeCount == 19)
+        #expect(LumiThemeContract.catalogThemeCount == 31)
     }
 
     @Test("主题 id 唯一且顺序稳定")
@@ -25,6 +25,9 @@ struct LumiThemeCatalogTests {
             "spring", "summer", "autumn", "winter", "github", "orchard",
             "mountain", "vscode-auto", "vscode-dark", "vscode-light",
             "river", "one-dark", "dracula",
+            "catppuccin-latte", "catppuccin-mocha", "tokyo-night", "nord",
+            "gruvbox", "solarized", "rose-pine", "rose-pine-dawn",
+            "monokai", "night-owl", "kanagawa", "everforest",
         ])
     }
 
@@ -47,6 +50,12 @@ struct LumiThemeCatalogTests {
             LumiThemeCatalog.mountain.id, LumiThemeCatalog.vscodeAuto.id,
             LumiThemeCatalog.vscodeDark.id, LumiThemeCatalog.vscodeLight.id,
             LumiThemeCatalog.river.id, LumiThemeCatalog.oneDark.id, LumiThemeCatalog.dracula.id,
+            LumiThemeCatalog.catppuccinLatte.id, LumiThemeCatalog.catppuccinMocha.id,
+            LumiThemeCatalog.tokyoNight.id, LumiThemeCatalog.nord.id,
+            LumiThemeCatalog.gruvbox.id, LumiThemeCatalog.solarized.id,
+            LumiThemeCatalog.rosePine.id, LumiThemeCatalog.rosePineDawn.id,
+            LumiThemeCatalog.monokai.id, LumiThemeCatalog.nightOwl.id,
+            LumiThemeCatalog.kanagawa.id, LumiThemeCatalog.everforest.id,
         ]
 
         #expect(memberIDs == catalogIDs)
@@ -148,22 +157,28 @@ struct LumiThemeCatalogTests {
         #expect(LumiThemeCatalog.vscodeLight.appearanceKind == .light)
     }
 
-    @Test("仅 vscode-light 声明为固定亮色")
-    func onlyVscodeLightIsLightAppearance() {
+    @Test("固定亮色主题为 vscode-light 与两套浅色配色")
+    func lightThemesAreExpected() {
         let lightThemes = LumiThemeCatalog.all.filter { $0.appearanceKind == .light }
 
-        #expect(lightThemes.map(\.id) == ["vscode-light"])
+        #expect(lightThemes.map(\.id) == [
+            "vscode-light", "catppuccin-latte", "rose-pine-dawn",
+        ])
     }
 
     @Test("使用亮暗同值色板的是三个固定外观主题")
     func fixedAppearanceThemesUseSingleHexPairs() {
-        // vscode-dark / vscode-light / one-dark / dracula 使用 ThemeHexPair(hex:)，
-        // 亮暗同值；其余主题保留双档色值以便预览时切换。
+        // 固定外观主题使用 ThemeHexPair(hex:)，亮暗同值；
+        // 跟随系统的主题保留双档色值以便预览时切换。
         let singleHexThemes = LumiThemeCatalog.all.filter {
             $0.palette.backgroundDeep.light == $0.palette.backgroundDeep.dark
         }
 
-        #expect(Set(singleHexThemes.map(\.id)) == ["vscode-dark", "vscode-light", "one-dark", "dracula"])
+        #expect(Set(singleHexThemes.map(\.id)) == [
+            "vscode-dark", "vscode-light", "one-dark", "dracula",
+            "catppuccin-latte", "catppuccin-mocha", "tokyo-night", "nord",
+            "rose-pine", "rose-pine-dawn", "monokai", "night-owl", "kanagawa",
+        ])
     }
 
     @Test("使用同值色板的主题均为固定外观（无 system）")

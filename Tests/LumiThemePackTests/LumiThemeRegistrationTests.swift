@@ -12,7 +12,7 @@ struct LumiThemeRegistrationTests {
 
     @Test("可选择主题数为目录主题数加三个内置外观")
     func selectableCountIsDerivedFromCatalog() {
-        #expect(LumiThemeContract.selectableThemeCount == 22)
+        #expect(LumiThemeContract.selectableThemeCount == 34)
         #expect(LumiThemeContract.selectableThemeCount
                 == LumiThemeContract.catalogThemeCount
                 + LumiThemeContract.additionalBuiltinThemeIDs.count)

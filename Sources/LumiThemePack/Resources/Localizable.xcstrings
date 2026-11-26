@@ -545,6 +545,142 @@
         }
       }
     },
+    "Catppuccin Latte" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin Latte"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin Latte"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin Latte"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin Latte"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin Latte"
+          }
+        }
+      }
+    },
+    "Catppuccin Latte · creamy light palette with pastel mauve and peach" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin Latte · creamy light palette with pastel mauve and peach"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin 拿铁 · 奶油浅色底，点缀柔和紫与蜜桃色"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin 拿鐵 · 奶油淺色底，點綴柔和紫與蜜桃色"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin 拿鐵 · 奶油淺色底，點綴柔和紫與蜜桃色"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin 拿鐵 · 奶油淺色底，點綴柔和紫與蜜桃色"
+          }
+        }
+      }
+    },
+    "Catppuccin Mocha" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin Mocha"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin Mocha"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin Mocha"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin Mocha"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin Mocha"
+          }
+        }
+      }
+    },
+    "Catppuccin Mocha · deep coffee dark palette with pastel accents" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin Mocha · deep coffee dark palette with pastel accents"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin 摩卡 · 深咖啡暗色底，柔和粉彩点缀"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin 摩卡 · 深咖啡暗色底，柔和粉彩點綴"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin 摩卡 · 深咖啡暗色底，柔和粉彩點綴"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catppuccin 摩卡 · 深咖啡暗色底，柔和粉彩點綴"
+          }
+        }
+      }
+    },
     "Choose from the theme library." : {
       "localizations" : {
         "en" : {
@@ -1195,6 +1331,40 @@
         }
       }
     },
+    "Dawn" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dawn"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dawn"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dawn"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dawn"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dawn"
+          }
+        }
+      }
+    },
     "Deep midnight blue, mysterious and serene" : {
       "localizations" : {
         "en" : {
@@ -1327,6 +1497,74 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "抬升"
+          }
+        }
+      }
+    },
+    "Everforest" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Everforest"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Everforest"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Everforest"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Everforest"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Everforest"
+          }
+        }
+      }
+    },
+    "Everforest · natural forest greens with warm light and deep dark variants, follows the system appearance" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Everforest · natural forest greens with warm light and deep dark variants, follows the system appearance"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "常青森林 · 自然森林绿，暖亮与深暗双档，跟随系统外观"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "常青森林 · 自然森林綠，暖亮與深暗雙檔，跟隨系統外觀"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "常青森林 · 自然森林綠，暖亮與深暗雙檔，跟隨系統外觀"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "常青森林 · 自然森林綠，暖亮與深暗雙檔，跟隨系統外觀"
           }
         }
       }
@@ -1671,6 +1909,74 @@
         }
       }
     },
+    "Gruvbox" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gruvbox"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gruvbox"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gruvbox"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gruvbox"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gruvbox"
+          }
+        }
+      }
+    },
+    "Gruvbox · retro warm palette with amber and brick tones, follows the system appearance" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gruvbox · retro warm palette with amber and brick tones, follows the system appearance"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gruvbox · 复古暖调，琥珀与砖红色，跟随系统外观"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gruvbox · 復古暖調，琥珀與磚紅色，跟隨系統外觀"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gruvbox · 復古暖調，琥珀與磚紅色，跟隨系統外觀"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gruvbox · 復古暖調，琥珀與磚紅色，跟隨系統外觀"
+          }
+        }
+      }
+    },
     "How It Works" : {
       "localizations" : {
         "en" : {
@@ -1735,6 +2041,108 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "靈感源自 GitHub 深色主題，深邃而專業"
+          }
+        }
+      }
+    },
+    "Kanagawa" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanagawa"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanagawa"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanagawa"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanagawa"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanagawa"
+          }
+        }
+      }
+    },
+    "Kanagawa · ink-wash blues and muted earth tones inspired by the great wave" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanagawa · ink-wash blues and muted earth tones inspired by the great wave"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "神奈川 · 源自浮世绘浪花的靛蓝与低调土色"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "神奈川 · 源自浮世繪浪花的靛藍與低調土色"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "神奈川 · 源自浮世繪浪花的靛藍與低調土色"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "神奈川 · 源自浮世繪浪花的靛藍與低調土色"
+          }
+        }
+      }
+    },
+    "Latte" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latte"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latte"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latte"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latte"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latte"
           }
         }
       }
@@ -2011,6 +2419,108 @@
         }
       }
     },
+    "Mocha" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mocha"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mocha"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mocha"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mocha"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mocha"
+          }
+        }
+      }
+    },
+    "Monokai" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monokai"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monokai"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monokai"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monokai"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monokai"
+          }
+        }
+      }
+    },
+    "Monokai · iconic high-contrast dark palette with vivid pink and green" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monokai · iconic high-contrast dark palette with vivid pink and green"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monokai · 经典高对比暗色，亮粉与鲜绿"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monokai · 經典高對比暗色，亮粉與鮮綠"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monokai · 經典高對比暗色，亮粉與鮮綠"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monokai · 經典高對比暗色，亮粉與鮮綠"
+          }
+        }
+      }
+    },
     "Mountain" : {
       "localizations" : {
         "en" : {
@@ -2147,6 +2657,74 @@
         }
       }
     },
+    "Night Owl" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Night Owl"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Night Owl"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Night Owl"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Night Owl"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Night Owl"
+          }
+        }
+      }
+    },
+    "Night Owl · deep navy night palette with soft blue and purple glow" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Night Owl · deep navy night palette with soft blue and purple glow"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "夜枭 · 深海军蓝夜色，柔和蓝紫微光"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "夜梟 · 深海軍藍夜色，柔和藍紫微光"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "夜梟 · 深海軍藍夜色，柔和藍紫微光"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "夜梟 · 深海軍藍夜色，柔和藍紫微光"
+          }
+        }
+      }
+    },
     "No Themes Found" : {
       "localizations" : {
         "en" : {
@@ -2177,6 +2755,74 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "找不到主題"
+          }
+        }
+      }
+    },
+    "Nord" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nord"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nord"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nord"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nord"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nord"
+          }
+        }
+      }
+    },
+    "Nord · arctic blue-gray palette, calm and crisp" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nord · arctic blue-gray palette, calm and crisp"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北境 · 极地蓝灰配色，冷静清冽"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北境 · 極地藍灰配色，冷靜清冽"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北境 · 極地藍灰配色，冷靜清冽"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北境 · 極地藍灰配色，冷靜清冽"
           }
         }
       }
@@ -2692,6 +3338,142 @@
         }
       }
     },
+    "Rosé Pine" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rosé Pine"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rosé Pine"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rosé Pine"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rosé Pine"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rosé Pine"
+          }
+        }
+      }
+    },
+    "Rosé Pine Dawn" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rosé Pine Dawn"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rosé Pine Dawn"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rosé Pine Dawn"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rosé Pine Dawn"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rosé Pine Dawn"
+          }
+        }
+      }
+    },
+    "Rosé Pine Dawn · warm paper light palette with rose and pine accents" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rosé Pine Dawn · warm paper light palette with rose and pine accents"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "蔷薇松·晨 · 暖纸浅色底，点缀玫瑰与松绿"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "薔薇松·晨 · 暖紙淺色底，點綴玫瑰與松綠"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "薔薇松·晨 · 暖紙淺色底，點綴玫瑰與松綠"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "薔薇松·晨 · 暖紙淺色底，點綴玫瑰與松綠"
+          }
+        }
+      }
+    },
+    "Rosé Pine · muted rose and iris on deep midnight, elegant and soft" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rosé Pine · muted rose and iris on deep midnight, elegant and soft"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "蔷薇松 · 深夜里低饱和的玫瑰与鸢尾，优雅柔和"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "薔薇松 · 深夜裡低飽和的玫瑰與鳶尾，優雅柔和"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "薔薇松 · 深夜裡低飽和的玫瑰與鳶尾，優雅柔和"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "薔薇松 · 深夜裡低飽和的玫瑰與鳶尾，優雅柔和"
+          }
+        }
+      }
+    },
     "Secondary Action" : {
       "localizations" : {
         "en" : {
@@ -2927,6 +3709,74 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "一抹紅楓，溫暖而深沉"
+          }
+        }
+      }
+    },
+    "Solarized" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solarized"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solarized"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solarized"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solarized"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solarized"
+          }
+        }
+      }
+    },
+    "Solarized · precision-balanced light and dark palette, follows the system appearance" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solarized · precision-balanced light and dark palette, follows the system appearance"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solarized · 明暗精确平衡的经典配色，跟随系统外观"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solarized · 明暗精確平衡的經典配色，跟隨系統外觀"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solarized · 明暗精確平衡的經典配色，跟隨系統外觀"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solarized · 明暗精確平衡的經典配色，跟隨系統外觀"
           }
         }
       }
@@ -3471,6 +4321,74 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "主題"
+          }
+        }
+      }
+    },
+    "Tokyo Night" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tokyo Night"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tokyo Night"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tokyo Night"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tokyo Night"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tokyo Night"
+          }
+        }
+      }
+    },
+    "Tokyo Night · neon-lit deep blue palette inspired by the night skyline" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tokyo Night · neon-lit deep blue palette inspired by the night skyline"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "东京夜 · 霓虹深蓝配色，灵感来自都市夜景"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "東京夜 · 霓虹深藍配色，靈感來自都市夜景"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "東京夜 · 霓虹深藍配色，靈感來自都市夜景"
+          }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "東京夜 · 霓虹深藍配色，靈感來自都市夜景"
           }
         }
       }
